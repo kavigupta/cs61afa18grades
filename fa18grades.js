@@ -3,7 +3,7 @@
 GRADES = ['F', 'D-', 'D', 'D+', 'C-', 'C', 'C+', 'B-', 'B', 'B+', 'A-', 'A', 'A+'];
 BUCKETS = [0, 160, 165, 170, 175, 185, 195, 205, 225, 250, 270, 285, 300];
 
-N_LABS = 13 + 1 // labs 0-13
+N_LABS = 13 // labs 0-13, minus 3
 N_DISCS = 12
 N_CHECKOFFS = 8
 
@@ -108,7 +108,7 @@ function logPointsNeeded(total, grade, before, recoveryCredits, finalPoints) {
 function calculateGrades() {
 
     var labs = 0;
-    for (var i = 0; i <= N_LABS - 1; i++) {
+    for (var i = 0; i <= N_LABS; i++) {
         labs += lab(i);
     }
 

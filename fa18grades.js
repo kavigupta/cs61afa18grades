@@ -130,7 +130,8 @@ function calculateGrades() {
     var hog = s('proj01') + s('proj01', 'composition') + s('hogcheckpoint');
     var maps = s('proj02') + s('proj02', 'composition');
     var ants = s('proj03') + s('proj03', 'composition') + s('antscheckpoint');
-    var scheme = (s('proj04') + s('schemecheckpoint1') + s('schemecheckpoint2')) || s('proj04stubbed');
+    var scheme = Math.max(s('proj04') + s('schemecheckpoint1') + s('schemecheckpoint2'), s('proj04stubbed'));
+    console.log(scheme);
 
     var projects = hog + maps + ants + scheme;
 

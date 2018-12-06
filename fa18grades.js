@@ -148,12 +148,13 @@ function calculateGrades() {
     }
 
     var midterm1 = s('midterm1') + mt1recovery;
+    var midterm1extra = s('midterm1extra');
     var midterm2 = s('midterm2') + mt2recovery;
     var final = s('final') + finalrecovery;
 
     var contests = s('proj01contest') + s('scheme_contest');
 
-    var total = projects + hws + partPoints + midterm1 + midterm2 + final + contests;
+    var total = projects + hws + partPoints + midterm1 + midterm1extra + midterm2 + final + contests;
 
     var grade = gradeFor(total);
     setupLog();
@@ -183,6 +184,7 @@ function calculateGrades() {
     logExam('Midterm 2', midterm2, mt2recovery, MT2_MAX);
     logExam('Final Exam', final, finalrecovery, FINAL_MAX);
     if (contests > 0) log('Contests: ', contests, ' (EC)');
+    if (midterm1extra > 0) log('Midterm 1 Extra: ', midterm1extra, ' (EC)')
     log();
     log('<strong>Total Score in the Class: ', total, '</strong>');
     log();
